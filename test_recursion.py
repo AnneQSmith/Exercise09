@@ -19,7 +19,12 @@ def test_sum_list():
     l = range(5)
     out = recursion.sum_list(l)
     assert out == 10
-    
+
+def test_reverse():
+    l = range(3)
+    out = recursion.reverse(l)
+    assert out == [2,1,0]
+
 
 
 

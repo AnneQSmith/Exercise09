@@ -39,7 +39,18 @@ def sum_list(l):
 
 # Reverse a list without slicing or loops
 def reverse(l):
-    return []
+    # l.reverse() is what one would do if they were NOT insane. Insane people
+    # write recursive ridiculousness here:
+    outlist = []
+    if len(l) == 0:
+        print "We hit the base case"
+        return []
+    else:
+        print "l:",l
+        print "outlist:", outlist
+        l.pop()
+        outlist.append(reverse(l))
+    return outlist
 
 # Fibonacci returns the nth fibonacci number. The nth fibonacci number is
 # defined as fib(n) = fib(n-1) + fib(n-2)
@@ -62,7 +73,3 @@ def fold_paper(width, height, folds):
 # Print all the numbers from 0 to target
 def count_up(target, n):
     return
-
-## Tests
-
-print multiply_list(range(1,6))
