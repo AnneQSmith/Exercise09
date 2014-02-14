@@ -41,16 +41,13 @@ def sum_list(l):
 def reverse(l):
     # l.reverse() is what one would do if they were NOT insane. Insane people
     # write recursive ridiculousness here:
-    outlist = []
-    if len(l) == 0:
-        print "We hit the base case"
-        return []
-    else:
-        print "l:",l
-        print "outlist:", outlist
-        l.pop()
-        outlist.append(reverse(l))
-    return outlist
+
+    if len(l) == 1:
+        return l
+    
+    temp = l.pop()
+
+    return [temp] + reverse(l)
 
 # Fibonacci returns the nth fibonacci number. The nth fibonacci number is
 # defined as fib(n) = fib(n-1) + fib(n-2)
