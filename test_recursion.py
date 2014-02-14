@@ -21,9 +21,42 @@ def test_sum_list():
     assert out == 10
 
 def test_reverse():
-    l = range(3)
+    l = range(5)
     out = recursion.reverse(l)
-    assert out == [2,1,0]
+    assert out == [4,3,2,1,0]
+
+def test_fibonacci():
+    n = 5
+    out = recursion.fibonacci(n)
+    assert out == 8
+    n = 6
+    out = recursion.fibonacci(n)
+    assert out == 13
+
+
+def test_find():
+    l = ['a','b','c','d']
+    i = 'e'
+    out = recursion.find(l,i)
+    assert out == None
+
+    i = 'a'
+    out = recursion.find(l,i)
+    assert out == True
+
+# def test_palindrome():
+#     str = 'evil'
+#     out = recursion.palindrome(str)
+#     assert out == False
+#     str = 'abccba'
+#     out = recursion.palindrome(str)
+#     assert out == True
+
+
+
+
+
+
 
 
 

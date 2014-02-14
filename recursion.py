@@ -52,11 +52,18 @@ def reverse(l):
 # Fibonacci returns the nth fibonacci number. The nth fibonacci number is
 # defined as fib(n) = fib(n-1) + fib(n-2)
 def fibonacci(n):
-    pass
+    if n <= 3: 
+        return n
+    return fibonacci(n-2) + fibonacci(n-1)
 
 # Finds the item i in the list l.... RECURSIVELY
 def find(l, i):
-    return None
+    if len(l) == 1:
+        return 
+        return i
+    else
+
+    return find(l,i)
 
 # Determines if a string is a palindrome
 def palindrome(some_string):
