@@ -52,28 +52,66 @@ def reverse(l):
 # Fibonacci returns the nth fibonacci number. The nth fibonacci number is
 # defined as fib(n) = fib(n-1) + fib(n-2)
 def fibonacci(n):
-    if n <= 3: 
-        return n
+    if n <= 2: 
+        return 1
     return fibonacci(n-2) + fibonacci(n-1)
 
 # Finds the item i in the list l.... RECURSIVELY
-def find(l, i):
-    if len(l) == 1:
-        return 
-        return i
-    else
+def find(listIn, i):
+   
+    if listIn == []:
+        return None
 
-    return find(l,i)
+    elif listIn[0] == i:
+        return i
+
+    return find(listIn[1:],i)
 
 # Determines if a string is a palindrome
 def palindrome(some_string):
-    return False
+
+    if len(some_string) <=1 :
+        return True
+    
+    firstchar = some_string[0]
+    lastchar = some_string[-1]
+
+    if len(some_string) == 2:
+        return (some_string[0] == some_string[1])
+
+    short_string = some_string[1:-1]
+    return palindrome (short_string)  
+
 
 # Given the width and height of a sheet of paper, and the number of times to fold it, return the final dimensions of the sheet as a tuple. Assume that you always fold in half along the longest edge of the sheet.
 def fold_paper(width, height, folds):
-    return (0, 0)
 
+    if folds == 0:
+        return(width,height)
+
+    return fold_paper(height, width/2.0,folds-1)
+ 
 # Count up
 # Print all the numbers from 0 to target
 def count_up(target, n):
+    print n
+    if target <= n:
+        return       
+    
+    count_up(target, n+1)
     return
+
+# extra credit -- solve the Hanoi pyramid proglem
+
+def hanoi(n, source, dest, helper):
+    
+    print n
+    if n > 0:
+        hanoi(n-1, source, helper, dest)
+        ring = source.pop()
+        dest.append(ring)
+        hanoi(n-1, helper, dest, source)
+
+    pass
+
+
